@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <ctype.h>
+char to_upper(char input);
+
+int main (void) {
+    char input;
+    scanf("%c", &input);
+    printf("Please enter a letter: %c\n", to_upper(input));
+
+}
+
+char to_upper(char input)
+{
+    if ( input >= 'a' && input <= 'z') {
+        return toupper(input);
+        
+    }
+    
+    
+    else {
+        return 0;
+    }
+}
