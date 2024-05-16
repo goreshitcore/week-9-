@@ -1,0 +1,63 @@
+//DRAW TRIANGLE DRAW TRIANGLE DRAW TRIANGLE
+#include <stdio.h>
+
+void draw_triangle(int height) {
+    int spaces_before_top = height - 1;  // Initial space before the top cone
+    int spaces_between = 0;              // Initial space between the cones
+    
+    
+    // Loop through each row of the triangle
+    for (int i = 1; i < height; i++) 
+    
+    {
+        // Print leading spaces before the top cone
+        for (int j = 0; j < spaces_before_top; j++) {
+            printf(" ");
+        }
+        
+        
+        
+        // Print the top cone
+        printf("/");
+        
+        // Print spaces between the cones
+        for (int j = 0; j < spaces_between; j++) {
+            printf(" ");
+        }
+        
+        
+        // Print the bottom cone
+        printf("\\\n");
+        
+        // Update spaces for the next row
+        spaces_before_top--;
+        spaces_between += 2;
+    }
+    
+    // Print the base of the triangle
+    printf("/");
+    for (int i = 0; i < 2 * height - 2; i++) {
+        printf("_");
+    }
+    printf("\\\n");
+    
+    
+    
+}
+
+int main() {
+    int height;
+    printf("enter height:\n");
+    scanf("%d", &height);
+    
+    
+    if (height == 0)
+    {
+        return 0;
+    }
+    else
+    {
+    draw_triangle(height);
+    }
+    return 0;
+}
