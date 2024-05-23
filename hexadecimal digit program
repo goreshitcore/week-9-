@@ -1,26 +1,18 @@
 #include <stdio.h>
 
-// Function declaration
 int is_hex_digit(char c);
 
-int main() {
-    char input_char;
+int main(void) {
+    char c;
     
-    // Prompt the user to input a character
-    scanf(" %c", &input_char); // Space before %c to consume any leading whitespace
-    
-    // Call the function and print the result
-    printf("> %d\n", is_hex_digit(input_char));
-    
-    return 0;
+    scanf(" %c", &c);
+    printf("> %d", is_hex_digit(c));
 }
 
-// Function definition
 int is_hex_digit(char c) {
-    // Check if the character is a valid hexadecimal digit
-    if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F') || (c >= 'a' && c <= 'f')) {
-        return 1; // Return 1 if it is
-    } else {
-        return 0; // Otherwise, return 0
-    }
+    
+    
+    if ( (c >= '0' && c <= '9') || (c >= 'A' && c <= 'F') || (c >= 
+    'a' && c <= 'f')) return 1;
+    else return 0;
 }
