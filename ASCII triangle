@@ -1,63 +1,60 @@
-//DRAW TRIANGLE DRAW TRIANGLE DRAW TRIANGLE
 #include <stdio.h>
 
-void draw_triangle(int height) {
-    int spaces_before_top = height - 1;  // Initial space before the top cone
-    int spaces_between = 0;              // Initial space between the cones
+void draw_triangle(int h);
+void draw_toptriangle(int h);
+void draw_basetriangle(int h);
+
+void draw_triangle(int h) {
     
+    draw_toptriangle(h);
+    draw_basetriangle(h);
     
-    // Loop through each row of the triangle
-    for (int i = 1; i < height; i++) 
-    
+}
+
+void draw_toptriangle(int h)
+{
+    for ( int i = 1; i < h; i++)
     {
-        // Print leading spaces before the top cone
-        for (int j = 0; j < spaces_before_top; j++) {
-            printf(" ");
+        for ( int j = 0; j < h - i; j++) // printing blank spaces
+        {
+            printf (" ");
         }
+        printf("/"); 
         
-        
-        
-        // Print the top cone
-        printf("/");
-        
-        // Print spaces between the cones
-        for (int j = 0; j < spaces_between; j++) {
-            printf(" ");
+        for ( int j = 0; j < ( i - 1 ) * 2; j++ ) 
+        {
+                printf(" "); // printing blank space on right side
         }
-        
-        
-        // Print the bottom cone
         printf("\\\n");
-        
-        // Update spaces for the next row
-        spaces_before_top--;
-        spaces_between += 2;
+
     }
     
-    // Print the base of the triangle
+}
+
+void draw_basetriangle(int h)
+{
     printf("/");
-    for (int i = 0; i < 2 * height - 2; i++) {
+    for ( int i = 0; i < ( h - 1) * 2; i++) {
         printf("_");
     }
     printf("\\\n");
     
-    
-    
 }
+int main (void) {
+    int h;
 
-int main() {
-    int height;
+
     printf("enter height:\n");
-    scanf("%d", &height);
-    
-    
-    if (height == 0)
+    scanf("%d", &h);
+
+    if (h <= 0)
     {
         return 0;
     }
     else
     {
-    draw_triangle(height);
+    draw_triangle(h);
     }
     return 0;
+    
 }
