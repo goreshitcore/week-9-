@@ -25,7 +25,7 @@ int main(void)
 
 int find_maximum(int number_1, int number_2, int number_3)
 {
-    if ( number_1 >= number_2 && number_1 >= number_3) {
+if ( number_1 >= number_2 && number_1 >= number_3) {
         return number_1;
     }
     
